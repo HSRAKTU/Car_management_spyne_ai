@@ -47,6 +47,9 @@ const openApiPath = path.join(__dirname, 'openapi.json');const setupSwagger = as
   }
 };
 
+app.get("/", (req, res) =>{
+  res.send("Server is ready")
+})
 // Call the setup function
 setupSwagger();
 
