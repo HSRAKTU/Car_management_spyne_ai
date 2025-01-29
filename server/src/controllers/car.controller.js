@@ -105,7 +105,7 @@ const getAllCars = asyncHandler(async (req, res) => {
   } else {
     pipeline.push({ $sort: { createdAt: -1 } });
   }
-
+ 
   pipeline.push({ $skip: (page - 1) * limit });
   pipeline.push({ $limit: parseInt(limit, 10) });
 
