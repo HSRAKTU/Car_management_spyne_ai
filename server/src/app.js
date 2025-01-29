@@ -39,7 +39,8 @@ const openApiPath = path.join(__dirname, 'openapi.json');const setupSwagger = as
     const openApiDocument = JSON.parse(openApiData);
 
     // Set up the /api/docs route with Swagger UI
-    app.use('/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
+    app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
+    app.use('/api/docs/', swaggerUi.serve, swaggerUi.setup(openApiDocument));
 
     console.log('Swagger UI is available at /api/docs');
   } catch (error) {
