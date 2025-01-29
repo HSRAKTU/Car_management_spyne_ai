@@ -72,7 +72,7 @@ export default function Listings() {
   // ------------------------------------------
   useEffect(() => {
     fetchCars(page, searchTerm)
-  }, [page, searchTerm, fetchCars])
+  }, [page, searchTerm])
 
   // ------------------------------------------
   // Handle Search Form
