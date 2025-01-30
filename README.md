@@ -4,6 +4,11 @@
 
 This is a **Car Management Application** where users can create, view, edit, and delete cars. Each car can contain up to **10 images**, a **title**, a **description**, and **tags** such as car type, company, dealer, etc. The application includes **user authentication**, allows users to manage only their products, and provides **search functionality** across products.
 
+#### sample user login credentials:
+```
+email: environment@nature.com
+password: environment@nature.com
+```
 ## Features
 
 ### Backend
