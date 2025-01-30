@@ -35,12 +35,20 @@ const __dirname = path.dirname(__filename);
 const openApiPath = path.join(__dirname, '../public/openapi.json');
 const setupSwagger = async () => {
   try {
-    // Read the JSON file using fs/promises
+    // Read the OpenAPI JSON file
     const openApiData = await readFile(openApiPath, 'utf8');
     const openApiDocument = JSON.parse(openApiData);
 
-    // Set up Swagger UI at /api/docs
-    app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
+    // Configure Swagger UI to use CDN for assets
+    app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument, {
+      swaggerOptions: {
+        url: '/openapi.json', // Serve your OpenAPI JSON from public/
+      },
+      customCssUrl:
+        'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css',
+      customJsUrl:
+        'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js',
+    }));
     console.log('Swagger UI is available at /api/docs');
   } catch (error) {
     console.error('Error setting up Swagger UI:', error);
