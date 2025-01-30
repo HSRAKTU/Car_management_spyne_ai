@@ -31,23 +31,20 @@ app.use('/api/v1/car', carRouter);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve Swagger openapi.json from the public directory
-const openApiPath = path.join(__dirname, '../public/openapi.json');
+// Swagger setup using CDN for assets and a static openapi.json
 const setupSwagger = async () => {
   try {
-    // Read the OpenAPI JSON file
-    const openApiData = await readFile(openApiPath, 'utf8');
-    const openApiDocument = JSON.parse(openApiData);
+    const openApiPath = path.join(__dirname, '../public/openapi.json'); // Path to the static file
+    const openApiData = await readFile(openApiPath, 'utf8'); // Read the file
+    const openApiDocument = JSON.parse(openApiData); // Parse JSON
 
-    // Configure Swagger UI to use CDN for assets
+    // Set up Swagger UI with CDN
     app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument, {
       swaggerOptions: {
-        url: '/openapi.json', // Serve your OpenAPI JSON from public/
+        url: '/openapi.json', // URL to the OpenAPI JSON file
       },
-      customCssUrl:
-        'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css',
-      customJsUrl:
-        'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js',
+      customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css',
+      customJsUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js',
     }));
     console.log('Swagger UI is available at /api/docs');
   } catch (error) {
