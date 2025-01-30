@@ -10,7 +10,8 @@
       {
         "src": "/(.*)",
         "dest": "/src/index.js"
-      }
+      },
+      { "src": "/openapi.json", "dest": "/public/openapi.json" }
     ]
   }
   
