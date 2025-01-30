@@ -8,6 +8,10 @@ import { readFile } from 'fs/promises';
 
 const app = express();
 
+// Swagger setup
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // Middleware setup
 app.use(cors({
   origin: process.env.CORS_ORIGIN,
@@ -27,9 +31,7 @@ import { errorHandler } from './middlewares/errorHandler.middleware.js';
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/car', carRouter);
 
-// Swagger setup
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 
 // Swagger setup using CDN for assets and a static openapi.json
 const setupSwagger = async () => {
