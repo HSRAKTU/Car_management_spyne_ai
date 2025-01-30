@@ -43,7 +43,7 @@ const setupSwagger = async () => {
     // Set up Swagger UI with CDN
     app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument, {
       swaggerOptions: {
-        url: '/openapi.json', // URL to the OpenAPI JSON file
+        url: '../public/openapi.json', // URL to the OpenAPI JSON file
       },
       customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css',
       customJsUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js',
