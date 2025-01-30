@@ -4,6 +4,7 @@
 
 This is a **Car Management Application** where users can create, view, edit, and delete cars. Each car can contain up to **10 images**, a **title**, a **description**, and **tags** such as car type, company, dealer, etc. The application includes **user authentication**, allows users to manage only their products, and provides **search functionality** across products.
 
+#### For API Docs and exposed URL for docs [click here](https://github.com/HSRAKTU/Car_management_spyne_ai?tab=readme-ov-file#api-documentation)
 #### sample user login credentials:
 ```
 email: environment@nature.com
