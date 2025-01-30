@@ -136,6 +136,7 @@ http://localhost:8000/api/docs
 | ------ | ----------------------------- | ------------------------ |
 | POST   | `/car/create-product`         | Create a new car listing |
 | GET    | `/car/list-products`          | Fetch all cars           |
+| GET    | `/car/user-products`          | Fetch all user's uploaded cars           |
 | GET    | `/car/list-product-by-id/:id` | Fetch a car by ID        |
 | PATCH  | `/car/update-product/:id`     | Update car details       |
 | DELETE | `/car/delete-product/:id`     | Delete a car             |
