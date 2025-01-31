@@ -26,7 +26,7 @@ password: environment@nature.com
 
 - **User Authentication** (Register/Login)
 - **Dashboard to View Cars**
-- **Create, Edit, and Delete Cars**
+- **Create, Edit, and Delete Cars (go to "My Garage")**
 - **Search Functionality**
 - **Styled with Tailwind CSS**
 - **Deployed on:** [Frontend Hosted Link](https://carhub-spyneai.vercel.app/)
