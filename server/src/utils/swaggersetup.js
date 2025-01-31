@@ -330,13 +330,13 @@ const setupSwagger = async () => {
       }; // Parse JSON
   
       // Set up Swagger UI with CDNa
-      // app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument,{
-      //   customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css',
-      //   customJsUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js',
-      //   customJs: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.min.js'
-      // }));
+      app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument,{
+        customCss:
+        '.swagger-ui .opblock .opblock-summary-path-description-wrapper { align-items: center; display: flex; flex-wrap: wrap; gap: 0 10px; padding: 0 10px; width: 100%; }',
+        customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css",
+      }));
 
-      app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
+      // app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
       console.log('Swagger UI is available at /api/docs');
     } catch (error) {
       console.error('Error setting up Swagger UI:', error);
