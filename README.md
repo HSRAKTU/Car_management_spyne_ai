@@ -118,7 +118,7 @@ The backend provides a **Swagger API Documentation** available at:
 ```
 http://localhost:8000/api/docs
 ```
-
+hosted backend endpoint: [https://car-management-spyne-ai.vercel.app/api/docs](https://car-management-spyne-ai.vercel.app/api/docs)
 ### Available API Endpoints
 
 #### User Routes
