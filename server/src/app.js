@@ -7,6 +7,10 @@ import { fileURLToPath } from 'url';
 
 const app = express();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 // Middleware setup
 app.use(cors({
   origin: process.env.CORS_ORIGIN,
@@ -14,7 +18,7 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '16Kb' }));
 app.use(express.urlencoded({ extended: true, limit: '16kb' }));
-app.use(express.static("public")); // Serve static files
+app.use(express.static(path.join(__dirname, '../public'))); // Serve static files
 app.use(cookieParser());
 
 // Routes

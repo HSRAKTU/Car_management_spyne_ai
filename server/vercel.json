@@ -8,10 +8,6 @@
     ],
     "routes": [
       {
-        "src": "/openapi.json",
-        "dest": "/public/openapi.json"
-      },
-      {
         "src": "/(.*)",
         "dest": "/src/index.js"
       }
