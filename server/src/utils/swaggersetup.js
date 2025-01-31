@@ -330,10 +330,7 @@ const setupSwagger = async () => {
       }; // Parse JSON
   
       // Set up Swagger UI with CDN
-      app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument, {
-        customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css',
-        customJsUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js',
-      }));
+      app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
       console.log('Swagger UI is available at /api/docs');
     } catch (error) {
       console.error('Error setting up Swagger UI:', error);
